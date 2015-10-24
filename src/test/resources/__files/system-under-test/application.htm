@@ -1,0 +1,160 @@
+<html>
+   <header>
+   <script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+   <script type="text/javascript" src="js/bootstrap.min.js"></script>
+   <script type="text/javascript" src="js/knockout-3.3.0.js"></script>
+   <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+   <body>
+   
+	
+	
+	<nav class="navbar navbar-default" id="system-under-test">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">SystemUnderTest</a>
+    </div>
+	<ul class="nav navbar-nav navbar-right">
+        <li><a href="login.htm" id="logout">Logout</a></li>
+	</ul>
+  </div><!-- /.container-fluid -->
+</nav>
+
+      <div role="tabpanel">
+         <!-- Nav tabs -->
+         <ul class="nav nav-tabs" role="tablist" data-type="menu">
+            <li role="presentation" class="active"><a href="#tab1" aria-controls="tab1" role="tab" data-toggle="tab">Tab1</a></li>
+            <li role="presentation"><a href="#add" aria-controls="add" role="tab" data-toggle="tab">Add Player or Match</a></li>
+            <li role="presentation"><a href="#stats" aria-controls="stats" role="tab" data-toggle="tab">Stats</a></li>
+              <li role="presentation"><a href="#profile" aria-controls="stats" role="tab" data-toggle="tab">User profile</a></li>
+         </ul>
+         <!-- Tab panes -->
+         <div class="tab-content">
+            <div role="tabpanel" class="tab-pane active" id="tab1">
+               <h1>This is the system under test</h1>
+            </div>
+            <div role="tabpanel" class="tab-pane" id="add">
+               <div class="row">
+                  <div class="col-md-6">
+                     <div class="well">
+                        <h4>Add new player</h4>
+                        <form data-form="add-player">
+                           <div class="form-group">
+                              <label for="firstname">First name</label>
+                              <input class="form-control" id="firstname">
+                           </div>
+                           <div class="form-group">
+                              <label for="lastname">Last name</label>
+                              <input type="password" class="form-control" id="lastname">
+                           </div>
+                           <button type="submit" class="btn btn-default">Submit</button>
+                        </form>
+                     </div>
+                  </div>
+                  <div class="col-md-6">
+                     <div class="well">
+                        <h4>Add match</h4>
+                        <form data-form="add-match">
+                           <div class="form-group">
+                              <label for="playerId">Player ID</label>
+                              <input class="form-control" id="playerId">
+                           </div>
+                           <div class="form-group">
+                              <label class="radio-inline">
+                              <input type="radio" name="inlineRadioOptions" id="win" value="win">Win
+                              </label>
+                              <label class="radio-inline">
+                              <input type="radio" name="inlineRadioOptions" id="lost" value="lost"> Lost
+                              </label>
+                           </div>
+                           <button type="submit" class="btn btn-default">Submit</button>
+                        </form>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div role="tabpanel" class="tab-pane" id="stats">
+               <table class="table" id="stats-table">
+                  <thead>
+                     <tr>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>Game played</th>
+                        <th>Win</th>
+                        <th>Lost</th>
+                     </tr>
+                  </thead>
+                  <tbody>
+                     <tr>
+                        <td data-column="firstname">Paul</td>
+                        <td data-column="lastname">Bibeault</td>
+                        <td data-column="gameplayed">102</td>
+                        <td data-column="win">41</td>
+                        <td data-column="lost">46</td>
+                     </tr>
+                     <tr>
+                        <td data-column="firstname">Andre</td>
+                        <td data-column="lastname">Binette</td>
+                        <td data-column="gameplayed">1</td>
+                        <td data-column="win">1</td>
+                        <td data-column="lost">0</td>
+                     </tr>
+                     <tr>
+                        <td data-column="firstname">Claude</td>
+                        <td data-column="lastname">Bourque</td>
+                        <td data-column="gameplayed">61</td>
+                        <td data-column="win">16</td>
+                        <td data-column="lost">37</td>
+                     </tr>
+                     <tr>
+                        <td data-column="firstname">Marc</td>
+                        <td data-column="lastname">Denis</td>
+                        <td data-column="gameplayed">1</td>
+                        <td data-column="win">1</td>
+                        <td data-column="lost">0</td>
+                     </tr>
+                     <tr>
+                        <td data-column="firstname">Gerry</td>
+                        <td data-column="lastname">McNeil</td>
+                        <td data-column="gameplayed">276</td>
+                        <td data-column="win">119</td>
+                        <td data-column="lost">105</td>
+                     </tr>
+                     <tr>
+                        <td data-column="firstname">Ron</td>
+                        <td data-column="lastname">Tugnutt</td>
+                        <td data-column="gameplayed">13</td>
+                        <td data-column="win">4</td>
+                        <td data-column="lost">4</td>
+                     </tr>
+                     <tr>
+                        <td data-column="firstname">Rick</td>
+                        <td data-column="lastname">Wamsley</td>
+                        <td data-column="gameplayed">131</td>
+                        <td data-column="win">72</td>
+                        <td data-column="lost">36</td>
+                     </tr>
+                  </tbody>
+               </table>
+            </div>
+            <div role="tabpanel" class="tab-pane" id="profile">
+               
+               <div class="well">
+                  <form data-form="add-player">
+                  	 <div class="form-group">
+                        <label for="firstname">Current email</label>
+                        <div>email@gmail.com</div>
+                     </div>
+                     
+                     <div class="form-group">
+                        <label for="firstname">Change email</label>
+                        <input class="form-control" id="firstname">
+                     </div>
+                      <button type="submit" class="btn btn-default">Submit</button> 
+                  </form>
+               </div>
+            </div>
+         </div>
+      </div>
+   </body>
+</html>
